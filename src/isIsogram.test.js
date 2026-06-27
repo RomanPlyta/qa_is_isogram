@@ -7,37 +7,23 @@ describe('isIsogram', () => {
     expect(isIsogram).toBeInstanceOf(Function);
   });
 
-  it(
-    'should return true for a word with no repeating letters ("playgrounds")',
-    () => {
-      expect(isIsogram('playgrounds')).toBe(true);
-    }
-  );
+  it('returns true for "playgrounds" (no repeats)', () => {
+    expect(isIsogram('playgrounds')).toBe(true);
+  });
 
-  it(
-    'should return false for a word with consecutive repeating letters ("look")',
-    () => {
-      expect(isIsogram('look')).toBe(false);
-    }
-  );
+  it('returns false for "look" (consecutive repeats)', () => {
+    expect(isIsogram('look')).toBe(false);
+  });
 
-  it(
-    'should return false for a word with non-consecutive repeating letters ' +
-    'of different cases ("Adam")',
-    () => {
-      expect(isIsogram('Adam')).toBe(false);
-    }
-  );
+  it('returns false for "Adam" (mixed case repeats)', () => {
+    expect(isIsogram('Adam')).toBe(false);
+  });
 
-  it('should return true for an empty string', () => {
+  it('returns true for an empty string', () => {
     expect(isIsogram('')).toBe(true);
   });
 
-  it(
-    'should return false for a word starting with repeating letters ' +
-    'of different cases ("Oops")',
-    () => {
-      expect(isIsogram('Oops')).toBe(false);
-    }
-  );
+  it('returns false for "Oops" (mixed case repeats)', () => {
+    expect(isIsogram('Oops')).toBe(false);
+  });
 });
